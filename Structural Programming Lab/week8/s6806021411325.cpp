@@ -1,144 +1,144 @@
 // 6806021411325 นายธนธรณ์ บุษเกตุ 14/8/2568 11:22
 
-#include <iostream>
-#include <string>
-#include <iomanip>
-using namespace std;
+#include <iostream>  // ใช้สำหรับการรับค่า (cin) และแสดงผล (cout)
+#include <string>    // ใช้สำหรับตัวแปรชนิด string
+#include <iomanip>   // ใช้สำหรับจัดรูปแบบการแสดงผล เช่น setw()
+using namespace std; // ทำให้สามารถเรียกใช้ชื่อคลาส/ฟังก์ชันมาตรฐานได้โดยไม่ต้องใส่ std::
 
-void Calendar();
-void Calgrade();
-void power_number();
+void Calendar();      // ประกาศฟังก์ชัน Calendar (ยังไม่เขียนเนื้อหา)
+void Calgrade();      // ประกาศฟังก์ชัน Calgrade (ยังไม่เขียนเนื้อหา)
+void power_number();  // ประกาศฟังก์ชัน power_number (ยังไม่เขียนเนื้อหา)
 
-int main()
+int main()  // จุดเริ่มต้นของโปรแกรม
 {
-    char Choice;
+    char Choice;  // ตัวแปรเก็บค่าที่ผู้ใช้เลือกเมนู
 
-    for (;;)
+    for (;;)   // ลูปแบบไม่รู้จบ (จะหยุดเมื่อเจอ break)
     {
-        cout << "====================" << endl;
-        cout << "menu" << endl;
-        cout << "====================" << endl;
-        cout << "1 Calendar         [1/9/c]" << endl;
-        cout << "2 Grade            [2/G/g]" << endl;
-        cout << "3 Power Number     [3/S/N]" << endl;
-        cout << "0 Exit             [0/E/X/I/T]" << endl;
-        cout << "Select Menu : ";
-        cin >> Choice;
+        cout << "====================" << endl;   // แสดงเส้นขอบ
+        cout << "menu" << endl;                  // แสดงข้อความ "menu"
+        cout << "====================" << endl;   // แสดงเส้นขอบ
+        cout << "1 Calendar         [1/9/c]" << endl;  // แสดงเมนู 1
+        cout << "2 Grade            [2/G/g]" << endl;  // แสดงเมนู 2
+        cout << "3 Power Number     [3/S/N]" << endl;  // แสดงเมนู 3
+        cout << "0 Exit             [0/E/X/I/T]" << endl; // แสดงเมนูออก
+        cout << "Select Menu : ";  // ให้ผู้ใช้เลือกเมนู
+        cin >> Choice;             // รับค่าที่ผู้ใช้ป้อน
 
-        if (Choice == '1' || Choice == '9' || Choice == 'c')
+        if (Choice == '1' || Choice == '9' || Choice == 'c')  // ถ้าผู้ใช้เลือก 1 หรือ 9 หรือ c
         {
-            Calendar();
-            return 0;
+            Calendar();  // เรียกใช้ฟังก์ชัน Calendar
+            return 0;    // จบโปรแกรม
         }
-        else if (Choice == '2' || Choice == 'G' || Choice == 'g')
+        else if (Choice == '2' || Choice == 'G' || Choice == 'g') // ถ้าเลือก 2, G หรือ g
         {
-            Calgrade();
-            return 0;
+            Calgrade();  // เรียกใช้ฟังก์ชัน Calgrade
+            return 0;    // จบโปรแกรม
         }
-        else if (Choice == '3' || Choice == 'S' || Choice == 'N')
+        else if (Choice == '3' || Choice == 'S' || Choice == 'N') // ถ้าเลือก 3, S หรือ N
         {
-            power_number();
-            return 0;
+            power_number();  // เรียกใช้ฟังก์ชัน power_number
+            return 0;        // จบโปรแกรม
         }
-        else if (Choice == '0' || Choice == 'E' || Choice == 'X' || Choice == 'I' || Choice == 'T')
+        else if (Choice == '0' || Choice == 'E' || Choice == 'X' || Choice == 'I' || Choice == 'T') // ถ้าเลือกตัวใดตัวหนึ่ง
         {
-            cout << "--------------------" << endl;
-            cout << "Exit Program \n";
-            cout << "--------------------" << endl;
-            break;
+            cout << "--------------------" << endl;  // แสดงเส้น
+            cout << "Exit Program \n";              // แสดงข้อความออกจากโปรแกรม
+            cout << "--------------------" << endl;  // แสดงเส้น
+            break;  // ออกจากลูป for (;;)
         }
         else
         {
-            cout << "Please Menu Again \n\n";
+            cout << "Please Menu Again \n\n";  // ถ้าป้อนผิด แสดงข้อความให้เลือกใหม่
         }
     }
-    return 0;
+    return 0;  // คืนค่าจบการทำงาน
 }
 
-void Calendar()
+void Calendar()  // ฟังก์ชันแสดงปฏิทิน
 {
-    cout << "Calendar AUGUST 2568\n";
-    cout << "SU  MO  TU  WE  TH  FR  SA\n";
+    cout << "Calendar AUGUST 2568\n";        // หัวข้อปฏิทิน
+    cout << "SU  MO  TU  WE  TH  FR  SA\n"; // แสดงชื่อวันทั้งสัปดาห์
 
-    for (int i = 0; i < 6; i++) {      // รอบนอก 6 สัปดาห์
-        for (int j = 1; j <= 7; j++) { // รอบใน 7 วัน
-            int num = i * 7 + j - 4;   // สูตรคำนวณตัวเลขวัน
-            if (num < 1 || num > 31)
-                cout << left << setw(4) << "X";
+    for (int i = 0; i < 6; i++) {      // วนลูป 6 แถว (6 สัปดาห์)
+        for (int j = 1; j <= 7; j++) { // วนลูป 7 คอลัมน์ (7 วันใน 1 สัปดาห์)
+            int num = i * 7 + j - 5;   // สูตรหาหมายเลขวัน เริ่มต้นจากวันอาทิตย์
+            if (num < 1 || num > 31)   // ถ้าวันน้อยกว่า 1 หรือมากกว่า 31
+                cout << left << setw(4) << "X"; // แสดง X แทน
             else
-                cout << left << setw(4) << num;
+                cout << left << setw(4) << num; // ถ้าวันถูกต้อง แสดงตัวเลข
         }
-        cout << endl;
+        cout << endl; // ขึ้นบรรทัดใหม่เมื่อครบ 7 วัน
     }
 }
 
-void Calgrade()
+void Calgrade()  // ฟังก์ชันคำนวณเกรด
 {
-    int score;
-    string name;
-    char grade;
+    int score;    // เก็บคะแนน
+    string name;  // เก็บชื่อ
+    char grade;   // เก็บเกรดตัวอักษร
 
-    cout << "Enter Name : ";
-    cin >> name;
-    cout << "Enter Score : ";
+    cout << "Enter Name : "; // รับชื่อ
+    cin >> name;             
+    cout << "Enter Score : "; // รับคะแนน
     cin >> score;
 
-    if (score < 0 || score > 100)
+    if (score < 0 || score > 100)  // ตรวจสอบว่าคะแนนถูกต้องหรือไม่
     {
-        cout << "Invalid score!" << endl;
-        return;
+        cout << "Invalid score!" << endl; // ถ้าผิด แสดงข้อความเตือน
+        return;                           // จบฟังก์ชัน
     }
 
-    if (score >= 90 && score <= 100)
+    if (score >= 90 && score <= 100)   // ถ้าคะแนน 90-100
     {
-        grade = 'S';
+        grade = 'S'; // ได้เกรด S
     }
-    else if (score >= 80)
+    else if (score >= 80) // ถ้าคะแนน 80-89
     {
         grade = 'A';
     }
-    else if (score >= 70)
+    else if (score >= 70) // ถ้าคะแนน 70-79
     {
         grade = 'B';
     }
-    else if (score >= 60)
+    else if (score >= 60) // ถ้าคะแนน 60-69
     {
         grade = 'C';
     }
-    else if (score >= 35)
+    else if (score >= 35) // ถ้าคะแนน 35-59
     {
         grade = 'D';
     }
-    else
+    else                  // ถ้าน้อยกว่า 35
     {
         grade = 'F';
     }
 
-    cout << name << " Score " << score << " Grade " << grade << endl;
+    cout << name << " Score " << score << " Grade " << grade << endl; // แสดงผลชื่อ คะแนน และเกรด
 }
 
-void power_number() 
+void power_number()  // ฟังก์ชันหาค่ากำลังของเลข
 {
-    int num;
+    int num;  // ตัวเลขฐาน (2-12)
 
-    // วนจนกว่าจะกรอกเลขถูกต้อง
+    // ลูปรับค่าจนกว่าจะกรอกเลขในช่วง 2-12
     do {
-        cout << "Enter Power Number (2-12) : ";
+        cout << "Enter Power Number (2-12) : "; // ให้กรอกเลข
         cin >> num;
 
-        if (num < 2 || num > 12)
-            cout << "Try Again" << endl;
+        if (num < 2 || num > 12) // ถ้ากรอกผิด
+            cout << "Try Again" << endl; // แสดงข้อความให้ลองใหม่
 
-    } while (num < 2 || num > 12);
+    } while (num < 2 || num > 12); // เงื่อนไขการวน
 
-    // คำนวณยกกำลัง
+    // วนลูปยกกำลัง 1 ถึง 10
     for (int i = 1; i <= 10; i++)
     {
-        long long result = 1;
-        for (int j = 0; j < i; j++)
+        long long result = 1;  // ตัวแปรเก็บผลลัพธ์ (ใช้ long long เผื่อค่ามีขนาดใหญ่)
+        for (int j = 0; j < i; j++) // คูณตัวเองตามจำนวนรอบ
         {
-            result *= num;
+            result *= num; // คูณค่าฐานทีละรอบ
         }
-        cout << num << "^" << i << "\t= " << result << endl;
+        cout << num << "^" << i << "\t= " << result << endl; // แสดงผล เช่น 2^3 = 8
     }
-} 
+}
