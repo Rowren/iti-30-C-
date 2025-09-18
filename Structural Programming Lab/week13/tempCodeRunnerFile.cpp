@@ -1,0 +1,1 @@
+Score[Vote[i] - 1]++;
