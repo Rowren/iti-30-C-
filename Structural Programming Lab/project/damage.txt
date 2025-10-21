@@ -1,0 +1,9 @@
+D1 E004 S004 Broken_string 2024-01-17 200 Paid
+D2 E001 S006 Torn_cover 2024-01-12 150 Unpaid
+D3 E002 S007 Lost_air_valve 2024-01-14 300 Paid
+D4 E003 S008 Cracked_ball 2024-01-16 250 Unpaid
+D5 E005 S009 Broken_shuttlecock 2024-01-18 100 Paid
+D7 E003 S006 Broken_Ball 2025-10-4 100 Paid
+D7 E003 S006 Broken 2025-10-4 1500 Unpaid
+D8 E009 S003 0 2025-10-4 0 Unpaid
+D9 E009 S003 Broken 2025-10-10 2000 Unpaid
